@@ -1,0 +1,25 @@
+4 Routers (R1, R2, R3, R4) are used to connect two different LAN segments.
+
+Switches (SW1 to SW8) connect devices inside each LAN.
+
+End devices include:
+
+3 PCs (PC1, PC2, PC3)
+
+1 Server (SRV1)
+
+Key Connections:
+Router to Router (R1-R3) uses fiber cable for long distance (3 km).
+
+Router to Switch connections are made using crossover cables (assuming Auto-MDIX is off).
+
+Switch to Switch and Switch to PC/Server use straight-through cables.
+
+Purpose:
+This setup helps learners understand:
+
+Device interconnections (Routers, Switches, PCs, Servers)
+
+Proper cable types for different connections
+
+Realistic network distances and layout
