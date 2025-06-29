@@ -1,0 +1,32 @@
+ What’s happening here?
+PC1 is trying to get an IP address using DHCP (Dynamic Host Configuration Protocol).
+
+A packet is being sent from PC1 to R1 with the destination IP 255.255.255.255 (broadcast) to locate a DHCP server.
+
+The PDU (Protocol Data Unit) is captured at Router R1, showing what happens to the packet across the OSI layers.
+
+ OSI Layer Breakdown (as seen in the left panel):
+OSI Layer	Information Shown
+Layer 7 (Application)	DHCP packet: Requesting IP address from server.
+Layer 4 (Transport)	UDP protocol (Src Port: 68, Dst Port: 67 – standard for DHCP).
+Layer 3 (Network)	IP Header – Source IP: 0.0.0.0 (no IP yet), Destination: 255.255.255.255 (broadcast).
+Layer 2 (Data Link)	Ethernet frame – Broadcast MAC address (FFFF.FFFF.FFFF).
+Layer 1 (Physical)	Implied: transmission over physical medium (e.g., Ethernet cable).
+
+ Network Devices Overview:
+PC1: Sends DHCP request.
+
+SW2 & SW1 (Switches): Forward the frame through the network.
+
+R1 (Router): Receives the DHCP packet and likely forwards it if DHCP relay is configured.
+
+SRV1 (Server): Appears to be a DHCP server (IP .100), expected to respond with IP info.
+
+R2: Part of the extended network, not involved in this specific DHCP flow.
+
+ Objective of the Task:
+Observe DHCP broadcast using simulation mode.
+
+Identify which OSI layers are used during this process.
+
+Layer 7 (Application Layer) traffic is triggered by releasing/renewing the IP
