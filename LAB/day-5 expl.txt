@@ -1,0 +1,59 @@
+* Networking Example: MAC Address Learning and Switching
+In this diagram, we have a small network setup with:
+
+2 Switches: SW1 and SW2
+
+4 PCs:
+
+PC1 (MAC: .0001)
+
+PC2 (MAC: .0002)
+
+PC3 (MAC: .0003)
+
+PC4 (MAC: .0004)
+
+The switches are connected to each other using port F0/3
+
+* What is Happening?
+PC3 wants to send a frame to PC1.
+
+The frame has:
+
+Source MAC: .0003 (PC3)
+
+Destination MAC: .0001 (PC1)
+
+* Step-by-Step Communication:
+PC3 sends the frame to SW2 through port F0/1
+→ SW2 learns: “Oh! MAC .0003 is on F0/1”
+
+SW2 checks its MAC table
+→ It already knows that MAC .0001 is on F0/3 (going to SW1)
+→ So, SW2 forwards the frame to SW1 through F0/3
+
+SW1 receives the frame on F0/3
+→ SW1 learns: “MAC .0003 is on F0/3”
+→ It checks its table and sees that MAC .0001 is on F0/1 (where PC1 is)
+
+SW1 sends the frame to PC1 via F0/1
+
+* MAC Address Tables:
+SW1 Table:
+
+.0001 → F0/1
+
+.0003 → F0/3
+
+SW2 Table:
+
+.0003 → F0/1
+
+.0001 → F0/3
+
+* Conclusion:
+This is an example of how switches learn MAC addresses.
+
+No broadcasting is needed since both switches already know where the destination is.
+
+The communication is efficient and direct
