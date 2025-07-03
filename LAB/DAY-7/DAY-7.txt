@@ -1,0 +1,54 @@
+Today i learn about IP address classes and their default subnet masks in both CIDR (Classless Inter-Domain Routing) and dotted decimal format, along with their binary representation.
+
+Explain in detail:
+
+* Class A
+CIDR Notation: /8
+
+Subnet Mask: 255.0.0.0
+
+Binary Mask: 11111111 00000000 00000000 00000000
+
+Explanation:
+
+The first 8 bits are reserved for the network portion.
+
+Remaining 24 bits are used for host addresses.
+
+Suitable for very large networks (up to ~16 million hosts per network).
+
+IP range: 1.0.0.0 to 126.255.255.255
+
+* Class B
+CIDR Notation: /16
+
+Subnet Mask: 255.255.0.0
+
+Binary Mask: 11111111 11111111 00000000 00000000
+
+Explanation:
+
+The first 16 bits are for the network.
+
+Last 16 bits are for hosts.
+
+Suitable for medium-sized networks (~65,000 hosts).
+
+IP range: 128.0.0.0 to 191.255.255.255
+
+* Class C
+CIDR Notation: /24
+
+Subnet Mask: 255.255.255.0
+
+Binary Mask: 11111111 11111111 11111111 00000000
+
+Explanation:
+
+First 24 bits are for the network.
+
+Last 8 bits are for hosts.
+
+Suitable for small networks (up to 254 hosts).
+
+IP range: 192.0.0.0 to 223.255.255.255
