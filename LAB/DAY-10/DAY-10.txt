@@ -1,0 +1,65 @@
+IPv4 Header :
+Version (4 bits)
+
+Indicates the IP version (IPv4 = 4).
+
+IHL (Internet Header Length) (4 bits)
+
+Specifies the length of the IP header in 32-bit words.
+
+Minimum value is 5 (20 bytes, no options).
+
+DSCP (Differentiated Services Code Point) (6 bits)
+
+Used for QoS (Quality of Service) to classify packets.
+
+ECN (Explicit Congestion Notification) (2 bits)
+
+Used for signaling network congestion without dropping packets.
+
+Total Length (16 bits)
+
+Length of the entire packet (header + data) in bytes.
+
+Identification (16 bits)
+
+Identifies fragments of the original IP datagram.
+
+Flags (3 bits)
+
+Controls and identifies fragments.
+
+Bit 0: Reserved
+
+Bit 1: Don’t Fragment (DF)
+
+Bit 2: More Fragments (MF)
+
+Fragment Offset (13 bits)
+
+Indicates the position of a fragment in the original packet.
+
+Time To Live (TTL) (8 bits)
+
+Prevents infinite looping. Decreases by 1 at each router.
+
+Protocol (8 bits)
+
+Specifies the protocol in the data portion (e.g., TCP=6, UDP=17, ICMP=1).
+
+Header Checksum (16 bits)
+
+Used to verify errors in the header.
+
+Source IP Address (32 bits)
+
+The sender's IP address.
+
+Destination IP Address (32 bits)
+
+The receiver's IP address.
+
+Options (variable)
+
+Optional field, used if IHL > 5. Rarely used.
+
